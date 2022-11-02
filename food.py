@@ -77,6 +77,10 @@ while True:
         print(result)
     elif(choice==8):
         print('Starting letter of name of recepi')
-
+        st = input('Enter the first character of the name : ')
+        sql = "SELECT * FROM `food` WHERE `Name` LIKE '%"+st+"%'"
+        mycursor.execute(sql)
+        result = mycursor.fetchall()
+        print(result)
     elif(choice==9):
         break
