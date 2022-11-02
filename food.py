@@ -51,11 +51,9 @@ while True:
         taste = input('enter the taste you need : ')
         price = input('enter the price : ')
 
-        sql = "'"+category+"'"
+        sql = "UPDATE `food` SET `Name`='"+name+"',`Category`='"+categorys+"',`Taste`='"+taste+"',`Price`='"+price+"' WHERE `Category`='"+categorys+"'"
         mycursor.execute(sql)
-        result = mycursor.fetchall()
-        for i in result:
-            print(i)
+        mydb.commit()
     elif(choice==5):
         print('delete the student')
     elif(choice==6):
